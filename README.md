@@ -1,209 +1,209 @@
-# Task Manager
+# Менеджер Задач
 
-A comprehensive task management system with Django REST API backend and React frontend.
+Комплексная система управления задачами с Django REST API backend и React frontend.
 
-## 🚀 Features
+## 🚀 Возможности
 
 ### Backend (Django REST Framework)
-- **Task Management**: Create, update, delete, and track tasks with hierarchical structure
-- **Employee Management**: Manage team members and roles
-- **JWT Authentication**: Secure authentication with token refresh
-- **RBAC**: Role-based access control (Manager/Employee roles)
-- **Workload Monitoring**: Real-time team workload analytics
-- **Important Tasks**: Critical tasks with smart employee recommendations
-- **REST API**: Full REST API with comprehensive documentation
-- **Database**: SQLite/PostgreSQL with proper migrations
+- **Управление задачами**: Создание, обновление, удаление и отслеживание задач с иерархической структурой
+- **Управление сотрудниками**: Работа с членами команды и ролями
+- **JWT аутентификация**: Безопасная аутентификация с обновлением токенов
+- **RBAC**: Контроль доступа на основе ролей (роли Менеджер/Сотрудник)
+- **Мониторинг нагрузки**: Аналитика нагрузки команды в реальном времени
+- **Важные задачи**: Критические задачи с умными рекомендациями сотрудников
+- **REST API**: Полный REST API с подробной документацией
+- **База данных**: SQLite/PostgreSQL с правильными миграциями
 
 ### Frontend (React + TypeScript)
-- **Modern UI**: Clean, responsive interface with Tailwind CSS
-- **Task Management**: Full CRUD operations with forms and validation
-- **Dashboard**: Overview with statistics and quick navigation
-- **Workload Views**: Visual workload distribution and important tasks
-- **Authentication**: Login/register with JWT token management
-- **Real-time Updates**: Dynamic data loading and error handling
-- **Mobile Responsive**: Works on all device sizes
+- **Современный UI**: Чистый, адаптивный интерфейс с Tailwind CSS
+- **Управление задачами**: Полные CRUD операции с формами и валидацией
+- **Дашборд**: Обзор со статистикой и быстрой навигацией
+- **Представления нагрузки**: Визуальное распределение нагрузки и важные задачи
+- **Аутентификация**: Вход/регистрация с управлением JWT токенами
+- **Обновления в реальном времени**: Динамическая загрузка данных и обработка ошибок
+- **Мобильная адаптивность**: Работает на всех размерах устройств
 
 ## 📖 Документация
 
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - Детальная архитектура и технологии проекта
 - **[USAGE.md](USAGE.md)** - Руководство пользователя
-- **[API Documentation](http://localhost:8000/api/schema/swagger-ui/)** - Интерактивная API документация
+- **[API Документация](http://localhost:8000/api/schema/swagger-ui/)** - Интерактивная API документация
 
-## 🛠️ Tech Stack
+## 🛠️ Технологический стек
 
 - **Python 3.11**
-- **Django 5.x** with **Django REST Framework**
-- **PostgreSQL 15+** with **psycopg[binary]**
+- **Django 5.x** с **Django REST Framework**
+- **PostgreSQL 15+** с **psycopg[binary]**
 - **Docker** & **Docker Compose**
-- **drf-spectacular** for API documentation
-- **pytest** with **factory-boy** for testing
-- **Black**, **isort**, **flake8**, **mypy** for code quality
-- **pre-commit** for git hooks
+- **drf-spectacular** для API документации
+- **pytest** с **factory-boy** для тестирования
+- **Black**, **isort**, **flake8**, **mypy** для качества кода
+- **pre-commit** для git хуков
 
-## 📋 Prerequisites
+## 📋 Необходимые компоненты
 
 - Python 3.11+
-- Docker & Docker Compose (for containerized deployment)
-- PostgreSQL 15+ (for production)
+- Docker & Docker Compose (для контейнеризированного развертывания)
+- PostgreSQL 15+ (для продакшена)
 
-## 🚀 Quick Start
+## 🚀 Быстрый старт
 
-### Local Development
+### Локальная разработка
 
-1. **Clone the repository**
+1. **Клонируйте репозиторий**
    ```bash
    git clone <repository-url>
    cd task-manager
    ```
 
-2. **Backend Setup**
+2. **Настройка backend**
    ```bash
-   # Create virtual environment
+   # Создайте виртуальное окружение
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # На Windows: venv\Scripts\activate
 
-   # Install Python dependencies
+   # Установите Python зависимости
    pip install -r requirements.txt
 
-   # Run migrations
+   # Выполните миграции
    python manage.py migrate
 
-   # Create superuser (optional)
+   # Создайте суперпользователя (опционально)
    python manage.py createsuperuser
    ```
 
-3. **Frontend Setup**
+3. **Настройка frontend**
    ```bash
-   # Install Node.js dependencies
+   # Установите Node.js зависимости
    cd frontend
    npm install
    cd ..
    ```
 
-4. **Start Both Servers**
+4. **Запустите оба сервера**
    ```bash
-   # Quick start script (starts both backend and frontend)
+   # Скрипт быстрого старта (запускает backend и frontend)
    ./start.sh
 
-   # Or manually:
-   # Terminal 1 - Backend
+   # Или вручную:
+   # Терминал 1 - Backend
    source venv/bin/activate
    python manage.py runserver 127.0.0.1:8000
 
-   # Terminal 2 - Frontend
+   # Терминал 2 - Frontend
    cd frontend
    npm run dev
    ```
 
-### Docker Deployment
+### Docker развертывание
 
-1. **Build and run with Docker Compose**
+1. **Соберите и запустите с Docker Compose**
    ```bash
    docker-compose up --build
    ```
 
-2. **Access the application**
+2. **Доступ к приложению**
    - **Frontend**: http://localhost:3001
    - **Backend API**: http://127.0.0.1:8000
    - **API Docs**: http://127.0.0.1:8000/api/schema/swagger-ui/
-   - **Admin Panel**: http://127.0.0.1:8000/admin/
-   - **pgAdmin**: http://localhost:8080 (if using Docker)
+   - **Админ панель**: http://127.0.0.1:8000/admin/
+   - **pgAdmin**: http://localhost:8080 (если используете Docker)
 
-## 📚 API Documentation
+## 📚 API Документация
 
-Once running, visit:
+После запуска посетите:
 - **Swagger UI**: http://localhost:8000/api/schema/swagger-ui/
 - **ReDoc**: http://localhost:8000/api/schema/redoc/
 
-## 👤 Test Credentials
+## 👤 Тестовые учетные данные
 
-The application comes with pre-configured test users:
+Приложение поставляется с преднастроенными тестовыми пользователями:
 
-- **Admin User**: `admin` / `admin123` (Manager role - full access)
-- **Employee User**: `employee1` / `emp123` (Employee role - limited access)
+- **Администратор**: `admin` / `admin123` (роль Менеджер - полный доступ)
+- **Сотрудник**: `employee1` / `emp123` (роль Сотрудник - ограниченный доступ)
 
-Use these credentials to test different permission levels.
+Используйте эти учетные данные для тестирования различных уровней разрешений.
 
-## 🧪 Testing
+## 🧪 Тестирование
 
-Run the test suite:
+Запустите набор тестов:
 
 ```bash
-# Run all tests with coverage
+# Запустите все тесты с покрытием
 python -m pytest --cov
 
-# Run specific test file
+# Запустите конкретный файл тестов
 python -m pytest tasks/tests/test_api.py
 
-# Run with verbose output
+# Запустите с подробным выводом
 python -m pytest -v
 ```
 
-## 🔧 Development
+## 🔧 Разработка
 
-### Code Quality
+### Качество кода
 
-This project uses several tools to maintain code quality:
+Этот проект использует несколько инструментов для поддержания качества кода:
 
 ```bash
-# Format code with Black
+# Форматируйте код с Black
 black .
 
-# Sort imports with isort
+# Сортируйте импорты с isort
 isort .
 
-# Lint with flake8
+# Проверяйте с flake8
 flake8 .
 
-# Type check with mypy
+# Проверяйте типы с mypy
 mypy .
 
-# Run all quality checks
+# Запустите все проверки качества
 pre-commit run --all-files
 ```
 
-### Pre-commit Hooks
+### Pre-commit хуки
 
-Pre-commit hooks are configured to run automatically on commit:
+Pre-commit хуки настроены для автоматического запуска при коммите:
 
 ```bash
-# Install pre-commit hooks
+# Установите pre-commit хуки
 pre-commit install
 
-# Run manually
+# Запустите вручную
 pre-commit run --all-files
 ```
 
-## 📁 Project Structure
+## 📁 Структура проекта
 
 ```
 task-manager/
 ├── backend/
-│   ├── task_manager/     # Django project settings
-│   ├── tasks/           # Main Django application
-│   │   ├── migrations/  # Database migrations
-│   │   ├── tests/      # Test files
-│   │   └── fixtures/   # Test data
-│   ├── requirements.txt # Python dependencies
-│   ├── Dockerfile      # Docker image
-│   └── pytest.ini     # Test configuration
+│   ├── task_manager/     # Настройки Django проекта
+│   ├── tasks/           # Основное Django приложение
+│   │   ├── migrations/  # Миграции базы данных
+│   │   ├── tests/      # Файлы тестов
+│   │   └── fixtures/   # Тестовые данные
+│   ├── requirements.txt # Python зависимости
+│   ├── Dockerfile      # Docker образ
+│   └── pytest.ini     # Конфигурация тестов
 ├── frontend/
-│   ├── src/            # React source code
-│   │   ├── components/ # React components
-│   │   ├── services/   # API services
-│   │   ├── types/      # TypeScript types
-│   │   └── utils/      # Utility functions
-│   ├── package.json    # Node.js dependencies
-│   ├── vite.config.ts  # Vite configuration
-│   └── README.md       # Frontend documentation
-├── docker-compose.yml  # Docker services
-├── start.sh           # Quick start script
-└── README.md          # Main documentation
+│   ├── src/            # Исходный код React
+│   │   ├── components/ # React компоненты
+│   │   ├── services/   # API сервисы
+│   │   ├── types/      # TypeScript типы
+│   │   └── utils/      # Вспомогательные функции
+│   ├── package.json    # Node.js зависимости
+│   ├── vite.config.ts  # Конфигурация Vite
+│   └── README.md       # Frontend документация
+├── docker-compose.yml  # Docker сервисы
+├── start.sh           # Скрипт быстрого старта
+└── README.md          # Основная документация
 ```
 
-## 🔐 Environment Variables
+## 🔐 Переменные окружения
 
-Create a `.env` file with:
+Создайте файл `.env` с содержимым:
 
 ```env
 DEBUG=True
@@ -212,27 +212,27 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/taskmanager
 ALLOWED_HOSTS=localhost,127.0.0.1
 ```
 
-## 🤝 Contributing
+## 🤝 Участие в разработке
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Ensure all tests pass
-6. Submit a pull request
+1. Форкните репозиторий
+2. Создайте ветку для функциональности
+3. Внесите изменения
+4. Добавьте тесты
+5. Убедитесь, что все тесты проходят
+6. Отправьте pull request
 
-## 📄 License
+## 📄 Лицензия
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Этот проект лицензирован под MIT License - подробности в файле LICENSE.
 
-## 🆘 Support
+## 🆘 Поддержка
 
-For questions or issues:
-- Check the API documentation
-- Review existing issues
-- Create a new issue with detailed information
+По вопросам или проблемам:
+- Проверьте API документацию
+- Посмотрите существующие issues
+- Создайте новый issue с подробной информацией
 
 ---
 
-Built with ❤️ using Django REST Framework
+Создано с ❤️ с использованием Django REST Framework
 
